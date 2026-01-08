@@ -30,3 +30,24 @@ stockage/*
 # Tests
 coverage/
 .phpunit.result.cache
+
+# Sensitive files
+.env*
+.env
+.env.production
+.env.*
+
+# Build / dependencies
+node_modules/
+
+# TLS / keys
+*.key
+*.pem
+*.crt
+
+# Uploads and generated assets
+public/uploads/
+
+# Editor backups
+*~
+.idea/
