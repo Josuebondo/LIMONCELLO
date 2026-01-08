@@ -1,0 +1,319 @@
+/* View timeline animations (from example) */
+/* ANIMATIONS AVEC animation-timeline: view() */
+
+/* Animation de fondu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in-view {
+  animation-name: fadeIn;
+  animation-timeline: view();
+  animation-duration: 1ms; /* Nécessaire pour Firefox */
+  animation-fill-mode: both;
+}
+
+/* Animation de glissement depuis la gauche */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-left-view {
+  animation-name: slideInLeft;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de glissement depuis la droite */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-right-view {
+  animation-name: slideInRight;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de zoom */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.zoom-in-view {
+  animation-name: zoomIn;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de rotation */
+@keyframes rotateIn {
+  from {
+    transform: rotate(-180deg) scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+.rotate-in-view {
+  animation-name: rotateIn;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de rebond */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.bounce-in-view {
+  animation-name: bounceIn;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de flip */
+@keyframes flipIn {
+  from {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(400px) rotateY(0);
+    opacity: 1;
+  }
+}
+.flip-in-view {
+  animation-name: flipIn;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de fondu avec zoom */
+@keyframes fadeZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.fade-zoom-view {
+  animation-name: fadeZoom;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de fondu avec paramètres view() */
+@keyframes fadeInWithParams {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-params {
+  animation-name: fadeInWithParams;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation au défilement */
+@keyframes scrollProgress {
+  from {
+    transform: scaleX(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+.scroll-progress {
+  animation-name: scrollProgress;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de texte dévoilé */
+@keyframes revealText {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+.reveal-text {
+  animation-name: revealText;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de flottement */
+@keyframes floatUp {
+  from {
+    transform: translateY(100px) rotate(5deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+}
+.float-up-view {
+  animation-name: floatUp;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de défilement horizontal */
+@keyframes scrollHorizontal {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.scroll-horizontal {
+  animation-name: scrollHorizontal;
+  animation-timeline: view();
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Animation de fondu avec paramètres avancés */
+@keyframes advancedFade {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.advanced-fade {
+  animation-name: advancedFade;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  animation-duration: 1ms;
+  animation-fill-mode: both;
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 6px;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a6fa5, #ff6b6b);
+  width: 0;
+  transform-origin: left;
+}
+
+/* Card initial state */
+.card-animated {
+  opacity: 0;
+}
+
+/* Header float */
+@keyframes headerFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.header-icon {
+  animation: headerFloat 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-view,
+  .slide-in-left-view,
+  .slide-in-right-view,
+  .zoom-in-view,
+  .rotate-in-view,
+  .bounce-in-view,
+  .flip-in-view,
+  .fade-zoom-view,
+  .fade-in-params,
+  .scroll-progress,
+  .reveal-text,
+  .float-up-view,
+  .scroll-horizontal,
+  .advanced-fade {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
