@@ -16,8 +16,9 @@ class MenuControleur extends BaseControleur
     public function index()
     {
         $menu = Menu::tout();
+        $categories = Menu::categories();
         // $this->afficher('menu.index', ['menus' => $menu]);
-        return vue('menu.index', ['menus' => $menu]);
+        return vue('menu.index', ['menus' => $menu, 'categories' => $categories]);
     }
 
     /**
@@ -33,10 +34,26 @@ class MenuControleur extends BaseControleur
      */
     public function enregistrer()
     {
+        // Gestion de l'upload d'image
+        $nom = $this->requete()->publier('nom');
+        $fichierImage = $this->requete()->fichier('image');
+        $cheminImage = null;
+        if ($fichierImage && $fichierImage['error'] === UPLOAD_ERR_OK) {
+            $dossierCible = __DIR__ . '/../../public/images/menu/';
+            if (!is_dir($dossierCible)) {
+                mkdir($dossierCible, 0777, true);
+            }
+            $extension = pathinfo($fichierImage['name'], PATHINFO_EXTENSION);
+            $nomFichier = uniqid('menu_', true) . '.' . $extension;
+            $cheminComplet = $dossierCible . $nomFichier;
+            if (move_uploaded_file($fichierImage['tmp_name'], $cheminComplet)) {
+                $cheminImage = 'images/menu/' . $nomFichier;
+            }
+        }
         $menu = Menu::creer([
-            'nom' => $this->requete()->publier('nom'),
+            'nom' => $nom,
+            'image' => $cheminImage,
         ]);
-
         return redirection('/');
     }
 

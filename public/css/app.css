@@ -1,180 +1,59 @@
-/* Animations avec animation-timeline: view() */
+/* App Styles - Animations supprimées */
+.content-center {
+  animation: fadeInUp 0.8s ease-out;
+  animation: slideInLeft 0.8s ease-out;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
+}
+.fade-in-view {
+  animation: fadeInUp 0.8s ease-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.reveal-image {
+  animation: scaleInImage 0.8s ease-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
 
-/* Animation de fondu */
-@keyframes fadeInView {
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Animation de glissement gauche */
-@keyframes slideInLeftView {
+@keyframes scaleInImage {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: scale(0.95);
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
-/* Animation de glissement droit */
-@keyframes slideInRightView {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Animation de zoom */
-@keyframes zoomInView {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-/* Animation de rotation subtile */
-@keyframes rotateInView {
+@keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: rotate(-5deg) scale(0.95);
+    transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
-    transform: rotate(0) scale(1);
+    transform: translateX(0);
   }
 }
-
-/* Animation d'apparition progressive */
-@keyframes progressiveFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Classes pour les animations view() */
-
-/* Pour les sections principales */
-.fade-in-view {
-  animation-name: fadeInView;
-  animation-timeline: view();
-  animation-range: entry 10% cover 25%;
-  animation-duration: 1ms; /* Requis pour certains navigateurs */
-  animation-fill-mode: both;
-}
-
-/* Pour les éléments qui viennent de la gauche */
 .slide-in-left-view {
-  animation-name: slideInLeftView;
+  animation: slideInLeft 0.8s ease-out;
   animation-timeline: view();
-  animation-range: entry 5% cover 20%;
-  animation-duration: 1ms;
-  animation-fill-mode: both;
+  animation-range: entry 0% cover 40%;
 }
-
-/* Pour les éléments qui viennent de la droite */
-.slide-in-right-view {
-  animation-name: slideInRightView;
-  animation-timeline: view();
-  animation-range: entry 5% cover 20%;
-  animation-duration: 1ms;
-  animation-fill-mode: both;
-}
-
-/* Pour les images/cartes */
-.zoom-in-view {
-  animation-name: zoomInView;
-  animation-timeline: view();
-  animation-range: entry 10% cover 30%;
-  animation-duration: 1ms;
-  animation-fill-mode: both;
-}
-
-/* Pour les éléments avec effet spécial */
-.rotate-in-view {
-  animation-name: rotateInView;
-  animation-timeline: view();
-  animation-range: entry 15% cover 25%;
-  animation-duration: 1ms;
-  animation-fill-mode: both;
-}
-
-/* Animation pour les cartes de menu (délai progressif) */
-.card-stagger {
-  animation-name: progressiveFadeIn;
-  animation-timeline: view();
-  animation-range: entry 10% cover 20%;
-  animation-duration: 1ms;
-  animation-fill-mode: both;
-}
-
-/* Animation pour les titres de section */
-.section-title-view {
-  animation-name: slideInLeftView;
-  animation-timeline: view();
-  animation-range: entry 5% cover 15%;
-  animation-duration: 1ms;
-  animation-fill-mode: both;
-}
-
-/* Animation pour le footer */
-.footer-animate {
-  animation-name: fadeInView;
-  animation-timeline: view();
-  animation-range: entry 10% cover 40%;
-  animation-duration: 1ms;
-  animation-fill-mode: both;
-}
-
-/* Support pour les navigateurs qui ne supportent pas animation-timeline */
-@supports not (animation-timeline: view()) {
-  .fade-in-view,
-  .slide-in-left-view,
-  .slide-in-right-view,
-  .zoom-in-view,
-  .rotate-in-view,
-  .card-stagger,
-  .section-title-view,
-  .footer-animate {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  /* Ces classes seront ajoutées via JavaScript */
-  .in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Ajustement pour le mode sombre */
-@media (prefers-color-scheme: dark) {
-  .fade-in-view,
-  .slide-in-left-view,
-  .slide-in-right-view,
-  .zoom-in-view,
-  .rotate-in-view {
-    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  }
-}
+/* Fin des styles d'animation */

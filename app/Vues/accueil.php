@@ -1,203 +1,227 @@
-﻿<?php \Core\Vue::extends('layouts.header'); ?>
-<!-- Hero Section -->
-<main class="flex-1">
-    <div class="px-4 lg:px-40 py-8">
-        <div class="max-w-[1200px] mx-auto">
-            <div class="@container">
-                <div class="relative min-h-[600px] flex flex-col items-center justify-center p-8 rounded-2xl overflow-hidden bg-cover bg-center" data-alt="Authentic Italian pizza on wood table in a lush garden terrace" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeuVYeIDfYVdCAXZ18s7DPHtsVx5FxkJA4ZNAvyfTG54cOM415wF7bl7DwAVfzcyUWOEkvflOHZjZxFkL77539ggieFucW1PTXENLXTE9PrCYXMxqwB1DlzDna7urG_exVmn68um4H3WZ9BiOoZ26g9Q2da68k0FgbVTTvqAKVL_OePCO0oIkuzADWYNxPius3fXWZ38wlwGqMwItSVjAo-w4nsnQYH8sdXM9eVO0MpLh1I9c8VZnX75_2ScolReG9PDzi2bfj1a8k");'>
-                    <div class="flex flex-col gap-6 text-center max-w-3xl">
-                        <h1 class="text-white text-5xl md:text-7xl font-black font-serif leading-tight reveal-fade-up">
-                            L’authenticité italienne au cœur de Kinshasa
-                        </h1>
-                        <p class="text-white/90 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed reveal-fade-in-150">
-                            Découvrez les saveurs de l'Italie dans notre jardin secret au centre de Gombe. Une expérience culinaire raffinée entre tradition et modernité.
-                        </p>
-                    </div>
-                    <div class="mt-10 flex flex-wrap gap-4 justify-center">
-                        <button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-primary text-background-dark text-base font-bold shadow-xl shadow-primary/30 hover:bg-primary/90 transition-all reveal-zoom-in-250">
-                            Voir le menu
-                        </button>
-                        <button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-14 px-8 bg-white/10 backdrop-blur-md border border-white/30 text-white text-base font-bold hover:bg-white/20 transition-all reveal-slide-left-350">
-                            Réserver une table
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Stats / Quick Info Bar -->
-    <div class="px-4 lg:px-40 pb-12">
-        <div class="max-w-[1200px] mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="flex items-center gap-4 bg-white dark:bg-white/5 p-6 rounded-xl border border-slate-200 dark:border-white/10 shadow-sm reveal-fade-in">
-                    <div class="size-12 rounded-full bg-gold/10 flex items-center justify-center text-gold">
-                        <span class="material-symbols-outlined">star</span>
-                    </div>
-                    <div>
-                        <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Note Google</p>
-                        <p class="text-slate-900 dark:text-white text-xl font-bold">4.3/5 <span class="text-sm font-normal text-slate-400">(500+ avis)</span></p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4 bg-white dark:bg-white/5 p-6 rounded-xl border border-slate-200 dark:border-white/10 shadow-sm reveal-fade-in-100">
-                    <div class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                        <span class="material-symbols-outlined">location_on</span>
-                    </div>
-                    <div>
-                        <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Adresse</p>
-                        <p class="text-slate-900 dark:text-white text-xl font-bold" data-location="Kinshasa">Gombe, Kinshasa</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4 bg-white dark:bg-white/5 p-6 rounded-xl border border-slate-200 dark:border-white/10 shadow-sm reveal-fade-in-200">
-                    <div class="size-12 rounded-full bg-slate-100 dark:bg-white/10 flex items-center justify-center text-slate-600 dark:text-slate-300">
-                        <span class="material-symbols-outlined">schedule</span>
-                    </div>
-                    <div>
-                        <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Horaires</p>
-                        <p class="text-slate-900 dark:text-white text-xl font-bold">12h00 - 23h00</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Featured Dishes Section -->
-    <div class="px-4 lg:px-40 py-16 bg-slate-50 dark:bg-white/[0.02]">
-        <div class="max-w-[1200px] mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 px-4">
-                <div class="max-w-xl">
-                    <span class="text-gold font-bold tracking-widest uppercase text-sm mb-2 block">Menu Signature</span>
-                    <h2 class="text-slate-900 dark:text-white text-4xl font-black font-serif">Nos plats les plus appréciés</h2>
-                </div>
-                <a class="mt-4 md:mt-0 flex items-center gap-2 text-primary font-bold hover:underline" href="#">
-                    Explorer la carte complète
-                    <span class="material-symbols-outlined">arrow_forward</span>
-                </a>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
-                <!-- Dish 1 -->
-                <div class="group flex flex-col gap-4 reveal-fade-up">
-                    <div class="relative overflow-hidden rounded-xl aspect-[4/5]">
-                        <div class="absolute top-4 left-4 z-10 bg-primary text-background-dark text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg">
-                            Populaire
-                        </div>
-                        <div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Fresh Italian pizza with creamy burrata and basil" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgX8-TBLoB_R4-JR6QwmGqk7ighnJyr_2jFjutt89_yRIzy1LwPVhzccKElebHwFc8VWlzkSBiUeJlctkIo3WC2sTHjQeCiKCgcBdHiKZvWpO3RAGKr3f47R35ku7sXLiFEGdkZXVCBdEb3HGylAunTNQnAcitwPZSeknDBkr2EJSqCfllYHnfZUyj78w9HGeV6vugkw1E3heA3iJJxX6vRWp0px4zWFQLzOIrs2Ui6nO-AdIOXuWPihiYkMLHcz1cMMYj0-6WZUr5");'></div>
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-slate-900 dark:text-white text-lg font-bold">Pizza Burrata</h3>
-                            <span class="text-gold font-serif font-bold text-xl">$18</span>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Tomate, burrata crémeuse, basilic frais, huile d'olive extra vierge.</p>
-                    </div>
-                </div>
-                <!-- Dish 2 -->
-                <div class="group flex flex-col gap-4 reveal-fade-up-80">
-                    <div class="relative overflow-hidden rounded-xl aspect-[4/5]">
-                        <div class="absolute top-4 left-4 z-10 bg-primary text-background-dark text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg">
-                            Populaire
-                        </div>
-                        <div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Creamy traditional pasta carbonara with guanciale" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVkOFBCsXB8Ifh9A0kIhRpUU4LiKQiIq7oKMmXKDCSw2A7tTily8GwFwecFa8QjNVIkPWlWB0KJ5iBGb4sbLE-AD3eZns2UwaW182wn71UYBKXFJKCi_-9k9jSa_B03utDg4U0YyPk4H7Xho1nb2DJgBFynKojhxLhqaboRBFTM63icRtw4lyNCHDb47BdoqX6--aHKMs5_9k7p13LrI-QIPHFZCFY1hyLbaOWhRe_SuE5E3IAxCwG_9quON6Guk92Fcilrvl6IYtT");'></div>
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-slate-900 dark:text-white text-lg font-bold">Pasta Carbonara</h3>
-                            <span class="text-gold font-serif font-bold text-xl">$16</span>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Recette traditionnelle au guanciale, œufs, pecorino romano et poivre noir.</p>
-                    </div>
-                </div>
-                <!-- Dish 3 -->
-                <div class="group flex flex-col gap-4 reveal-fade-up-160">
-                    <div class="relative overflow-hidden rounded-xl aspect-[4/5]">
-                        <div class="absolute top-4 left-4 z-10 bg-primary text-background-dark text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg">
-                            Populaire
-                        </div>
-                        <div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Rich osso buco stew with herbs and vegetables" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfKOzCbd6BQi0bgqOlEH8kjjXcrYnhiCr91MDTx4AD5_ZWgWBP6KSEBWG43_3xWQKpLceLb70ID6_qSbnHfhJSM3GLU4jk60DX9tgj0YOdIr_WYuh0Sw6zzx59J4oGqehW4Acozu5argqF5dAW7C8GB4LsIZLBOsSY0GpV9zDuVxJ09MfunyvMrvLR1DvLvwysoB8yz3LlWSDzFSbNdZd1Fg6nLxnRh6dizfGvCskjBVnva1drMpKerbnr8UOP8uBt4q2gxTxkRMKf");'></div>
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-slate-900 dark:text-white text-lg font-bold">Osso Buco</h3>
-                            <span class="text-gold font-serif font-bold text-xl">$24</span>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Jarret de veau braisé à la milanaise, servi avec son risotto au safran.</p>
-                    </div>
-                </div>
-                <!-- Dish 4 -->
-                <div class="group flex flex-col gap-4 reveal-fade-up-240">
-                    <div class="relative overflow-hidden rounded-xl aspect-[4/5]">
-                        <div class="absolute top-4 left-4 z-10 bg-primary text-background-dark text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg">
-                            Populaire
-                        </div>
-                        <div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" data-alt="Homemade tiramisu layers with cocoa powder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARsTN8Tk4bfUwWK1raTYAneStB8ZXCnLPaB5EdQ0-35O8Qzpow2SMJ30G0HI8LoSo_O9UuftrhGJxuxaUygPZLGwDlCf9zE5LDT5SmrxHhp-QhIMYEc6NV0jYpIbg2GWG8_V87eJpcTlC370pwqUx_kZ3Sn6ncBW1qMTkqfyJW0GbRSgCsyXfWHgOy5ZH5_yQFLRvbJ9kzf_sVMqGUxz5-olV7dzpCBmmtBportwsZoR5E_ihR_CKkxN65JkqVS3ZRp777G0BwFl1u");'></div>
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <div class="flex justify-between items-center">
-                            <h3 class="text-slate-900 dark:text-white text-lg font-bold">Tiramisu Maison</h3>
-                            <span class="text-gold font-serif font-bold text-xl">$10</span>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Le classique de la maison, mascarpone onctueux et biscuits imbibés au café.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer CTA -->
-    <div class="px-4 lg:px-40 py-20">
-        <div class="max-w-[1200px] mx-auto text-center bg-background-dark text-white rounded-3xl p-12 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
-            <div class="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full blur-2xl -ml-24 -mb-24"></div>
-            <h2 class="text-4xl md:text-5xl font-black font-serif mb-6 relative z-10">Prêt pour un voyage culinaire ?</h2>
-            <p class="text-slate-300 max-w-xl mx-auto mb-10 text-lg relative z-10">Réservez votre table dès maintenant pour une soirée inoubliable dans le jardin le plus prisé de Kinshasa.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-                <button class="bg-primary text-background-dark px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform">Réserver maintenant</button>
-                <button class="bg-white/10 border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">Nous appeler</button>
-            </div>
-        </div>
-    </div>
-</main>
-<!-- Footer -->
-<footer class="bg-slate-900 text-white px-4 lg:px-40 py-12 border-t border-white/5">
-    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between gap-12">
-        <div class="flex flex-col gap-6 max-w-xs">
-            <div class="flex items-center gap-3">
-                <div class="size-6 text-primary">
-                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
-                    </svg>
-                </div>
-                <h2 class="text-xl font-black font-serif tracking-tight">Limoncello</h2>
-            </div>
-            <p class="text-slate-400 text-sm leading-relaxed italic">"Le goût de l'Italie, l'âme de Kinshasa."</p>
-            <div class="flex gap-4">
-                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">social_leaderboard</span>
-                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">photo_camera</span>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-12 sm:gap-24">
-            <div class="flex flex-col gap-4">
-                <h4 class="font-bold text-slate-100">Restaurant</h4>
-                <ul class="text-slate-400 text-sm flex flex-col gap-2">
-                    <li><a class="hover:text-white transition-colors" href="#">La Carte</a></li>
-                    <li><a class="hover:text-white transition-colors" href="#">Vins &amp; Boissons</a></li>
-                    <li><a class="hover:text-white transition-colors" href="#">Événements</a></li>
-                    <li><a class="hover:text-white transition-colors" href="#">Recrutement</a></li>
-                </ul>
-            </div>
-            <div class="flex flex-col gap-4">
-                <h4 class="font-bold text-slate-100">Informations</h4>
-                <ul class="text-slate-400 text-sm flex flex-col gap-2">
-                    <li><a class="hover:text-white transition-colors" href="#">Mentions Légales</a></li>
-                    <li><a class="hover:text-white transition-colors" href="#">Confidentialité</a></li>
-                    <li><a class="hover:text-white transition-colors" href="#">Cookies</a></li>
-                    <li><a class="hover:text-white transition-colors" href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="max-w-[1200px] mx-auto mt-16 pt-8 border-t border-white/5 text-slate-500 text-xs text-center">
-        © 2024 Limoncello Kinshasa. Tous droits réservés.
-    </div>
-</footer>
-</div>
-</body>
+﻿<?php
+\core\Vue::extends('layouts.principal');
+\core\Vue::debut_section('contenu');
 
-</html>
+?>
+
+<style type="text/tailwindcss">
+    @layer base {
+            body {
+                font-family: 'Epilogue', sans-serif;
+                scroll-behavior: smooth;
+            }
+        }
+        .glass-nav {
+            background: rgba(10, 15, 11, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(10, 15, 11, 0.3) 0%, rgba(10, 15, 11, 0.9) 100%);
+        }
+        .floating-card {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .floating-card:hover {
+            transform: translateY(-10px);
+        }.slider-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
+        }@keyframes subtleZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        .active .slide-bg {
+            animation: subtleZoom 10s forwards;
+        }
+    </style>
+
+
+<section class="slider-container">
+    <div class="slide active">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center slide-bg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBV2mMxTOTU73qSLrTFzfu8ed5I6Z22MYqP--13FidM5ZRhIWSA5t4vxB2rzN4tk-YQkDePO_j4G3On1nF8SB2qTe4zlH_yjrFhE8IKMqWmb-zbYAYnRLbd3Lw5RPVYiXyyDEc002fB0MwPIZXI9cXlS7v70P_BdSdmHFKH0LUdhCZP5CVQcO-k5ufyBavPQM2AfRKiFel_TcEeBpZqMtG20anbNkSwbve4LOP9ReTwtue__tSSRzUQej6AgWkW53cXaPfS2hTNhC4");'></div>
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="relative h-full flex items-center justify-center z-10 text-center px-6 max-w-5xl mx-auto">
+            <div class="space-y-8">
+                <span class="text-primary font-bold uppercase tracking-[0.5em] text-sm block">Excellence &amp; Tradition</span>
+                <h1 class="text-white text-6xl md:text-8xl font-black tracking-tighter font-display leading-[0.9]">
+                    Une Expérience <br /><span class="text-primary italic">Culinaire Unique</span>
+                </h1>
+                <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    Découvrez l'apogée de la gastronomie contemporaine, où chaque détail est une œuvre d'art orchestrée pour vos sens.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+                    <a href="/reservation" class="bg-primary text-background-dark px-12 py-4 rounded font-black text-sm uppercase tracking-[0.3em] shadow-[0_0_30px_rgba(212,175,55,0.2)] hover:scale-105 transition-transform">
+                        Réserver une Table
+                    </a>
+                    <a href="/menus" class="border border-white/20 text-white backdrop-blur-md px-12 py-4 rounded font-black text-sm uppercase tracking-[0.3em] hover:bg-white hover:text-background-dark transition-all">
+                        Explorer le Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center slide-bg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCeNoz3MbbnIksyX3hhnaG56YIjd8Ls5uGm0JmGwPRX3TqbOUGy2pWJMwIDqmstycMD7ikMaBpZ7oVLIjOoian2YykKnQs2e6mlGYKWXjbnjiHh-a29EhI1wHdmytIUudVsPbbHCyfoi9n2wtfp6ufJdJRDjvUD3UB65JhEfZWq6MB0-8NrhB9BN_HyNij16yuSfTsljPl6DATFiVC9cs2BA1hdT7BKRDRR2NrMouRdJL-AFjfy0qpy7SJzFjdpRoYpT6vc6fDacpk");'></div>
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="relative h-full flex items-center justify-center z-10 text-center px-6 max-w-5xl mx-auto">
+            <div class="space-y-8">
+                <span class="text-primary font-bold uppercase tracking-[0.5em] text-sm block">L'Art de la Viande</span>
+                <h2 class="text-white text-6xl md:text-8xl font-black tracking-tighter font-display leading-[0.9]">
+                    Wagyu <br /><span class="text-primary italic">Signature</span>
+                </h2>
+                <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    Une sélection d'exception maturée avec soin, pour une tendreté et des saveurs inégalées.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+                    <button class="bg-primary text-background-dark px-12 py-4 rounded font-black text-sm uppercase tracking-[0.3em] hover:scale-105 transition-transform">
+                        Réserver une Table
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center slide-bg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBViL4ZW_Qn04Mg1rNcqVkwfP-x7hxNl_QA7QvQkgRGOyDMpl2VlE6tLCT9Bk0QXW53mbC12DZ9so-fxAm9W05SbT2tVcqc3jdYv4kraUFWXavKoXovyM350uwgq-UHS0wATebL6XYUSY186cCEn4840CH2zzni6f9aA7maYnYgvJEHBTYq0LbI0EqebYphVZpVpsR9OqtAyxEyOx0dOfG6Dv0epHpcGo6AMHeMi0U2ZUaeYB90qybM5p4nOA4TuIUkqQUN9vgGJO0");'></div>
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="relative h-full flex items-center justify-center z-10 text-center px-6 max-w-5xl mx-auto">
+            <div class="space-y-8">
+                <span class="text-primary font-bold uppercase tracking-[0.5em] text-sm block">Trésors Marins</span>
+                <h2 class="text-white text-6xl md:text-8xl font-black tracking-tighter font-display leading-[0.9]">
+                    Fraîcheur <br /><span class="text-primary italic">Océanique</span>
+                </h2>
+                <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    Le meilleur de nos côtes, sublimé par la créativité de nos chefs et la finesse des épices.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center pt-4">
+                    <button class="bg-primary text-background-dark px-12 py-4 rounded font-black text-sm uppercase tracking-[0.3em] hover:scale-105 transition-transform">
+                        Réserver une Table
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-4">
+        <div class="w-12 h-1 bg-primary rounded-full opacity-100"></div>
+        <div class="w-12 h-1 bg-white/20 rounded-full opacity-100"></div>
+        <div class="w-12 h-1 bg-white/20 rounded-full opacity-100"></div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce z-20">
+        <span class="material-symbols-outlined text-primary/40 text-4xl">keyboard_double_arrow_down</span>
+    </div>
+</section>
+<section class="py-24 px-6 bg-background-light dark:bg-background-dark" id="menu">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16 text-center">
+            <span class="text-primary font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Sélection de Saison</span>
+            <h2 class="text-4xl md:text-5xl font-black dark:text-white text-slate-900 tracking-tighter">Nos Créations Signature</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="floating-card group bg-charcoal rounded-xl overflow-hidden border border-white/5 shadow-2xl">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBViL4ZW_Qn04Mg1rNcqVkwfP-x7hxNl_QA7QvQkgRGOyDMpl2VlE6tLCT9Bk0QXW53mbC12DZ9so-fxAm9W05SbT2tVcqc3jdYv4kraUFWXavKoXovyM350uwgq-UHS0wATebL6XYUSY186cCEn4840CH2zzni6f9aA7maYnYgvJEHBTYq0LbI0EqebYphVZpVpsR9OqtAyxEyOx0dOfG6Dv0epHpcGo6AMHeMi0U2ZUaeYB90qybM5p4nOA4TuIUkqQUN9vgGJO0");'></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-white text-2xl font-bold tracking-tight">Noix de Saint-Jacques</h3>
+                        <span class="text-primary font-bold">32€</span>
+                    </div>
+                    <p class="dark:text-white/60 text-sm leading-relaxed mb-6">Beurre herbes-citron, velouté de chou-fleur, huile de chorizo, jeunes pousses.</p>
+                    <button class="flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-4 transition-all">
+                        Détails <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <div class="floating-card group bg-charcoal rounded-xl overflow-hidden border border-white/5 shadow-2xl">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCeNoz3MbbnIksyX3hhnaG56YIjd8Ls5uGm0JmGwPRX3TqbOUGy2pWJMwIDqmstycMD7ikMaBpZ7oVLIjOoian2YykKnQs2e6mlGYKWXjbnjiHh-a29EhI1wHdmytIUudVsPbbHCyfoi9n2wtfp6ufJdJRDjvUD3UB65JhEfZWq6MB0-8NrhB9BN_HyNij16yuSfTsljPl6DATFiVC9cs2BA1hdT7BKRDRR2NrMouRdJL-AFjfy0qpy7SJzFjdpRoYpT6vc6fDacpk");'></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-white text-2xl font-bold tracking-tight">Entrecôte Wagyu</h3>
+                        <span class="text-primary font-bold">85€</span>
+                    </div>
+                    <p class="dark:text-white/60 text-sm leading-relaxed mb-6">Grade A5, sel marin fumé, jus à la truffe, poireaux brûlés.</p>
+                    <button class="flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-4 transition-all">
+                        Détails <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <div class="floating-card group bg-charcoal rounded-xl overflow-hidden border border-white/5 shadow-2xl">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvVpDu63fXgVnX-vadbFs-tX4uN5bckg_FwrKKH2THxFCLrjDaxG3WVn0JNoAoPSGT4TS7tv4hdPV3Zq8yITykkAd1O4Ut0_mrYETnSbrD-yU4zaUve-Kki_HGUYUwJA-jo1FVhrSTWiu9IjHomXSgJobmLiXxH3Bpyy-8ULP_F4S_nr5TVfRZodgs8WEJZaKRV21fusWJnANlGHuy388E-c5Rv3dtrBiYdZsgllUJ47GkZuof8g3mMXtpLX_vTdg3PQi6p3j2UMU");'></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-white text-2xl font-bold tracking-tight">Risotto du Jardin</h3>
+                        <span class="text-primary font-bold">28€</span>
+                    </div>
+                    <p class="dark:text-white/60 text-sm leading-relaxed mb-6">Légumes anciens, parmesan affiné, essence de basilic, or comestible.</p>
+                    <button class="flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-4 transition-all">
+                        Détails <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-24 px-6 dark:bg-background-dark text-primary  dark:text-white/70 bg-white" id="vision">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="space-y-8">
+                <span class="text-primary font-bold uppercase tracking-[0.3em] text-sm">Philosophie</span>
+                <h2 class="text-5xl md:text-6xl font-black tracking-tighter leading-[0.9] bg-gradient-to-r from-gold via-primary to-gold bg-clip-text text-transparent drop-shadow-lg dark:drop-shadow-[0_2px_24px_rgba(212,175,55,0.5)]">
+                    La Vision du <span class="text-gold dark:text-gold">Goût Pur</span>
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-white/90 leading-relaxed font-light dark:drop-shadow-[0_1px_8px_rgba(212,175,55,0.15)]">
+                    Notre philosophie repose sur l'<span class="text-gold font-semibold dark:text-gold">harmonie</span> entre la <span class="text-primary font-semibold dark:text-gold">nature</span> et la <span class="text-primary font-semibold dark:text-gold">technique</span>. Chaque ingrédient est sourcé auprès d'<span class="text-gold font-semibold dark:text-gold">artisans locaux</span> pour créer une <span class="text-gold font-semibold dark:text-gold">symphonie de saveurs</span> qui honore la terre. Nous croyons que la <span class="text-gold font-semibold dark:text-gold">haute gastronomie</span> est plus qu'un repas — c'est un <span class="text-primary font-semibold dark:text-gold">voyage sensoriel</span> à travers les saisons.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10">
+                    <div class="space-y-3">
+                        <div class="w-12 h-1 bg-gold"></div>
+                        <h4 class="font-bold uppercase tracking-widest text-sm text-gold">Sourcing</h4>
+                        <p class="text-xs text-slate-500 dark:text-white/50 uppercase leading-loose">Livraisons quotidiennes garantissant des produits d'une fraîcheur absolue.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="w-12 h-1 bg-gold"></div>
+                        <h4 class="font-bold uppercase tracking-widest text-sm text-gold">Artisanat</h4>
+                        <p class="text-xs text-slate-500 dark:text-white/50 uppercase leading-loose">Préparation méticuleuse par nos maîtres culinaires.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="w-12 h-1 bg-gold"></div>
+                        <h4 class="font-bold uppercase tracking-widest text-sm text-gold">Ambiance</h4>
+                        <p class="text-xs text-slate-500 dark:text-white/50 uppercase leading-loose">Une atmosphère intime pour une immersion sensorielle totale.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-4">
+                    <div class="h-64 bg-cover bg-center rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCttGuKhxva8baA9A1l9UQ8K4o3sGWiaGwPXEYjHjfC7kGY34qklT_i06zw24NuWoGbnXXj11dd0B3O7Td7swn4YC09d6iF8I1aAy3ms6HpIONK62JFPhynnCDVMbZlrmF9A2GV1r6F8V97--wA07QB4Rk7WBqF-p4_gqEV8kbmjD30I_5M2nO5d4DjQsIyNj8NSNzXO3Gf6qMYcIeeZzdUSifoP6liB_ruTA8HW21t7Tiroi3bkVMvy3CylnlPBxU-hU6ufBFp1O8");'></div>
+                    <div class="h-48 bg-cover bg-center rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACrLZVgRN2HsUYI--omjNhOlA6P-8wjpTA6AZ6Y0hEg0_zwyIoWOTb3PGB0lAYOvBlaM5YzZioPqmCMWy9J983YShZjODdG8r6L8w1kUbwWISPCKc3WiRBFDlE0TBFU028u1PQOKJUswBzvWMr1D9tZLgtqD8kK4ubeaE8y8mBTZjos5Un9HAfbFfdrUP9EyyfHRsCs2GDE-f_EYiVH1_WFVWOHUT47JnWSGRV0AjxVqgMoGODf9TcoMWKXOa6Mk-W-TX3ZJ3Otvk");'></div>
+                </div>
+                <div class="pt-12 space-y-4">
+                    <div class="h-48 bg-cover bg-center rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBJ8IdUcKORNnJEd6SblMT2ItHWfZ51ZQFH-9OSPhMuwHG94UJ2a4hNXfcVC-DufPTff5kw_GsOVSYZeGibcHCfpod07vouC3FjHyWUPGrKLzX2mch9EqNiBqFAhZq5zGyYRuNrcN5Ei7jzgjJi5pCF34ghvQnAa0uh3CDCn5bQHpxnKK_zDpXqhH3DdD6fS00j42_Z8o3xuCCLHNVC3C1tuYtsDPoXqFkf2uS3tUQVFsNWnrXzNmqkeGomuM9_m97KN8ZcNzbIoUc");'></div>
+                    <div class="h-64 bg-cover bg-center rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDR_GdCA1NT_1AbTtXhD9LDUwDdZoWph4xZ8m0aAf74Eb17E3oCXpZQ7amBCKHduXcKk6FA9H-1rMDdeHIKLhlDdeD8y-6JaP5s4sGuy4TVz17WLdtXw370SV5dGiw78YTglaYs-stzlCw9otyt6TOjFwdExVYfhO5sUR4vY1LV-mn30TqAHV57uO4eDjPsJ2V8uKf3qEyeIbtsX__uHkAyBUu0cCLfESMdFClh2cTwM0iaveI6y6l9Sxiu9QOA4D03gBzEYnNELoo");'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php \core\Vue::fin_section('contenu'); ?>

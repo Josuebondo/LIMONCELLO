@@ -140,4 +140,59 @@ class Requete
     {
         return isset($this->post[$cle]) || isset($this->get[$cle]);
     }
+
+    /**
+     * Retourne toutes les données du corps de la requête (POST, PUT, PATCH, DELETE)
+     * - Pour POST : $_POST
+     * - Pour PUT/PATCH/DELETE : JSON ou x-www-form-urlencoded
+     */
+    public function tous(): array
+    {
+        $methode = $this->methode();
+        if ($methode === 'POST') {
+            return $this->post;
+        }
+        // Pour PUT, PATCH, DELETE : lire le corps brut
+        if (in_array($methode, ['PUT', 'PATCH', 'DELETE'])) {
+            $contenu = file_get_contents('php://input');
+            $data = [];
+            $contentType = $this->server['CONTENT_TYPE'] ?? '';
+            if (stripos($contentType, 'application/json') !== false) {
+                $data = json_decode($contenu, true) ?: [];
+            } elseif (stripos($contentType, 'application/x-www-form-urlencoded') !== false) {
+                parse_str($contenu, $data);
+            }
+            return $data;
+        }
+        // Pour GET ou autres, rien
+        return [];
+    }
+
+    /**
+     * Retourne toutes les données GET + POST (formulaire classique)
+     */
+    public function tousFormulaires(): array
+    {
+        return array_merge($this->get, $this->post);
+    }
+
+    /**
+     * Retourne toutes les données du corps pour PUT/PATCH/DELETE (JSON ou x-www-form-urlencoded)
+     */
+    public function tousCorps(): array
+    {
+        $methode = $this->methode();
+        if (in_array($methode, ['PUT', 'PATCH', 'DELETE'])) {
+            $contenu = file_get_contents('php://input');
+            $data = [];
+            $contentType = $this->server['CONTENT_TYPE'] ?? '';
+            if (stripos($contentType, 'application/json') !== false) {
+                $data = json_decode($contenu, true) ?: [];
+            } elseif (stripos($contentType, 'application/x-www-form-urlencoded') !== false) {
+                parse_str($contenu, $data);
+            }
+            return $data;
+        }
+        return [];
+    }
 }

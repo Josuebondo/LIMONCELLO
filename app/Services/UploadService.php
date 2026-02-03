@@ -23,6 +23,35 @@ class UploadService
     }
 
     /**
+     * Upload un fichier dans le dossier stockage/ et retourne le chemin relatif
+     * @param array $file $_FILES['...']
+     * @param string $subdir Sous-dossier dans stockage/ (optionnel)
+     * @return string|null Chemin relatif ou null en cas d'erreur
+     */
+    public function uploadDansStockage(array $file, string $subdir = ''): ?string
+    {
+        if (!isset($file['tmp_name']) || !is_uploaded_file($file['tmp_name'])) {
+            return null;
+        }
+        $baseDir = dirname(__DIR__, 2) . '/stockage';
+        if ($subdir) {
+            $baseDir .= '/' . trim($subdir, '/');
+        }
+        if (!is_dir($baseDir)) {
+            mkdir($baseDir, 0775, true);
+        }
+        $filename = uniqid('file_', true) . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '', basename($file['name']));
+        $dest = $baseDir . '/' . $filename;
+        if (move_uploaded_file($file['tmp_name'], $dest)) {
+            // Retourne le chemin relatif depuis la racine du projet
+            $rel = 'stockage' . ($subdir ? '/' . trim($subdir, '/') : '') . '/' . $filename;
+            return $rel;
+        }
+        return null;
+    }
+
+
+    /**
      * Définit le répertoire d'upload
      */
     public function setRepertoire(string $repertoire): self

@@ -106,10 +106,8 @@ class Application
             'public' => $this->racine . '/public',
             'routes' => $this->racine . '/routes',
             'config' => $this->racine . '/config',
-            'stockage' => $this->racine . '/stockage',
             'vues' => $this->racine . '/app/Vues',
             'logs' => $this->racine . '/stockage/logs',
-            'cache' => $this->racine . '/stockage/cache',
         ];
     }
 

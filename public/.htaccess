@@ -3,7 +3,13 @@
     RewriteEngine On
     
     # Définir la base correctement
-    RewriteBase /BMVC/
+    RewriteBase /LIMONCELLo/
+    
+    # Servir les fichiers statiques depuis /stockage/
+    RewriteCond %{REQUEST_URI} ^/stockage/ [NC]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^stockage/(.*)$ ../stockage/$1 [L]
     
     # Exclure les fichiers et dossiers réels
     RewriteCond %{REQUEST_FILENAME} !-f

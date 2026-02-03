@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ticket Prix</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="ticket">
+      <div class="ticket-top">
+        <div class="product">
+          BELLE FRANCE<br />
+          CROQUETTES POUR CHIEN<br />
+          <span class="weight">JUNIOR 1.5KG</span>
+        </div>
+
+        <div class="brand">
+          <div class="arrow">▶</div>
+          <div class="logo">NEWLYS<br /><small>SUPER MARCHÉ</small></div>
+        </div>
+      </div>
+
+      <div class="barcode">3258561280486 / 1019030</div>
+
+      <div class="price">FC : <span>13625</span></div>
+    </div>
+  </body>
+</html>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=OCR+AStd&display=swap");
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+    font-family: "OCR A Std", monospace;
+  }
+
+  .ticket {
+    width: 300px;
+    background: white;
+    border: 2px dashed black;
+    padding: 20px;
+  }
+
+  .ticket-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .product {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .weight {
+    font-size: 12px;
+    color: gray;
+  }
+
+  .brand {
+    text-align: center;
+  }
+
+  .arrow {
+    font-size: 24px;
+    transform: rotate(90deg);
+  }
+
+  .logo {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .barcode {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .price {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .price span {
+    font-size: 24px;
+    color: red;
+  }
+</style>

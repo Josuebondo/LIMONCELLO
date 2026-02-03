@@ -20,6 +20,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 class BMVCCLI
 {
+
     protected string $commande = '';
     protected array $arguments = [];
     protected array $options = [];
@@ -102,6 +103,7 @@ class BMVCCLI
             'demarrer' => true,
             'tinker' => true,
             'aide' => true,
+            'creer:symlink-stockage' => true,
         ];
     }
 
@@ -131,8 +133,11 @@ class BMVCCLI
             'cmg' => 'creer:migration',
             'mg' => 'migrer',
             'd' => 'demarrer',
+            'pub' => 'publier',
             't' => 'tinker',
             'a' => 'aide',
+            'cl' => 'creer:symlink-stockage',
+            'lien' => 'creer:symlink-stockage',
         ];
 
         return $aliases[$commande] ?? $commande;
@@ -156,11 +161,46 @@ class BMVCCLI
             'creer:migration' => $this->creerMigration(),
             'migrer' => $this->executerMigrations(),
             'demarrer' => $this->demarrerServeur(),
+            'publier' => $this->publierServeur(),
             'tinker' => $this->tinker(),
+            'creer:symlink-stockage' => $this->creerSymlinkStockage(),
             'aide', '--help', '-h' => $this->afficherAide(),
             'version', '--version', '-v' => $this->afficherVersion(),
             default => $this->erreur("Commande inconnue: {$this->commande}"),
         };
+    }
+
+    /**
+     * Démarrer le serveur sur toutes les interfaces (0.0.0.0)
+     */
+    public function publierServeur(): void
+    {
+        $port = 8000;
+        if (isset($this->options['port'])) {
+            $port = (int) $this->options['port'];
+        }
+
+        $ipLocale = getHostByName(getHostName());
+        $ipPublique = $this->recupererIPPublique();
+        $version = $this->obtenirVersion();
+        $nomApp = env('NOM_APPLICATION', 'BMVC');
+
+        $this->succes("🚀 $nomApp $version démarré!");
+        $this->info("👉 Accès local : http://{$ipLocale}:{$port}");
+        $this->info("👉 Accès réseau : http://{$ipPublique}:{$port} (si redirection de port)");
+        $this->info("Appuyez sur Ctrl+C pour arrêter\n");
+
+        $chemin = __DIR__ . '/public';
+        system("php -S 0.0.0.0:{$port} -t \"{$chemin}\"");
+    }
+
+    /**
+     * Récupérer l'IP publique via un service externe
+     */
+    private function recupererIPPublique(): string
+    {
+        $ip = @file_get_contents('https://api.ipify.org');
+        return $ip ?: 'Indisponible';
     }
 
     /**
@@ -331,7 +371,7 @@ class {NOMCTRL} extends BaseControleur
     public function enregistrer()
     {
         ${nom_var} = {NOM}::creer([
-            'nom' => $this->request()->post('nom'),
+            'nom' => $this->requette()->publier('nom'),
         ]);
 
         return redirection('/');
@@ -342,7 +382,7 @@ class {NOMCTRL} extends BaseControleur
      */
     public function editer()
     {
-        $id = $this->request()->param('id');
+        $id = $this->requette()->param('id');
         ${nom_var} = {NOM}::trouver($id);
 
         if (!${nom_var}) {
@@ -357,7 +397,7 @@ class {NOMCTRL} extends BaseControleur
      */
     public function mettreAJour()
     {
-        $id = $this->request()->param('id');
+        $id = $this->requette()->param('id');
         ${nom_var} = {NOM}::trouver($id);
 
         if (!${nom_var}) {
@@ -365,7 +405,7 @@ class {NOMCTRL} extends BaseControleur
         }
 
         ${nom_var}->mettreAJour([
-            'nom' => $this->request()->post('nom'),
+            'nom' => $this->requette()->publier('nom'),
         ]);
 
         return redirection('/');
@@ -376,7 +416,7 @@ class {NOMCTRL} extends BaseControleur
      */
     public function supprimer()
     {
-        $id = $this->request()->param('id');
+        $id = $this->requette()->param('id');
         {NOM}::supprimer($id);
         return redirection('/');
     }
@@ -549,8 +589,6 @@ PHP;
     protected function demarrerServeur(): void
     {
         $port = 8000;
-
-        // Supporter --port=8000 et -p 8000
         if (isset($this->options['port'])) {
             $port = (int) $this->options['port'];
         }
@@ -754,6 +792,33 @@ TEXT;
     {
         echo "\033[31m✗ Erreur: {$message}\033[0m\n";
         exit(1);
+    }
+    /**
+     * Créer un symlink public/stockage -> ../stockage
+     */
+    protected function creerSymlinkStockage(): void
+    {
+        $public = __DIR__ . '/public/stockage';
+        $stockage = __DIR__ . '/stockage';
+        if (is_link($public) || file_exists($public)) {
+            $this->erreur('Le lien ou dossier public/stockage existe déjà.');
+        }
+        if (!is_dir($stockage)) {
+            mkdir($stockage, 0775, true);
+        }
+        // Windows vs Unix
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            $cmd = 'mklink /D "' . $public . '" "' . $stockage . '"';
+            exec($cmd, $output, $ret);
+            if ($ret !== 0) {
+                $this->erreur('Échec de création du symlink Windows. Lancez en administrateur.');
+            }
+        } else {
+            if (!symlink($stockage, $public)) {
+                $this->erreur('Impossible de créer le symlink.');
+            }
+        }
+        $this->succes('Symlink public/stockage → ../stockage créé avec succès.');
     }
 }
 

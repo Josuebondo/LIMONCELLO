@@ -15,4 +15,10 @@ class AccueilControleur extends BaseControleur
             'message' => 'Framework PHP MVC prêt pour la production'
         ]);
     }
+    public function nonFound()
+    {
+        $this->afficher('404', [
+            'titre' => 'Page non trouvée',
+        ]);
+    }
 }
