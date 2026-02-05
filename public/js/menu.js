@@ -200,25 +200,18 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("panier", JSON.stringify(cart));
       console.log("Panier après ajout:", cart);
       showToast("Plat ajouté au panier !", "success");
-      updatePanierBadge();
+      if (window.updatePanierCount) window.updatePanierCount();
     } else {
       // Augmente la quantité existante
       exists.quantity = (exists.quantity || 1) + (item.quantity || 1);
       localStorage.setItem("panier", JSON.stringify(cart));
       showToast("Quantité augmentée dans le panier !", "info");
-      updatePanierBadge();
+      if (window.updatePanierCount) window.updatePanierCount();
     }
   }
 
   // Met à jour dynamiquement le badge du panier dans le header
-  function updatePanierBadge() {
-    const badge = document.getElementById("panier-count");
-    if (!badge) return;
-    let cart = JSON.parse(localStorage.getItem("panier")) || [];
-    // Affiche le nombre d'items différents (ou quantité totale si souhaité)
-    let total = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-    badge.textContent = total > 0 ? total : "";
-  }
+  // La fonction updatePanierCount est maintenant globale (header.php)
 
   function showToast(message, type = "info") {
     let toast = document.createElement("div");
@@ -231,5 +224,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   fetchMenuItems();
-  updatePanierBadge();
+  if (window.updatePanierCount) window.updatePanierCount();
 });

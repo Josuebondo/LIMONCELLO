@@ -6,6 +6,7 @@
  * ======================================================================
  */
 
+use Core\Route;
 use Core\Routeur;
 
 // Route accueil
@@ -70,6 +71,7 @@ Routeur::obtenir('/api/reservations/code/{code}', 'ReservationAPIControleur@find
 Routeur::publier('/api/reservations', 'ReservationAPIControleur@store');
 Routeur::mettre('/api/reservations/{id}', 'ReservationAPIControleur@update')->ou('id', '[0-9]+');
 Routeur::patcher('/api/reservations/{id}/annuler', 'ReservationAPIControleur@annuler')->ou('id', '[0-9]+');
+Routeur::patcher('/api/reservations/{id}/confirmer', 'ReservationAPIControleur@confirmer')->ou('id', '[0-9]+');
 Routeur::supprimer('/api/reservations/{id}', 'ReservationAPIControleur@destroy')->ou('id', '[0-9]+');
 Routeur::mettre('/api/reservations/{id}', 'ReservationAPIControleur@update')->ou('id', '[0-9]+');
 
@@ -91,3 +93,11 @@ Routeur::obtenir('/paniers/{id}/supprimer', 'panierControleur@supprimer')->ou('i
 
 Routeur::obtenir('/paniers/comfirmer', 'panierControleur@comfirmer')->nom('panier.confirmer');
 Routeur::obtenir('/paniers/finaliser', 'panierControleur@finaliser')->nom('panier.finaliser');
+
+
+//API commandes
+Routeur::obtenir('/api/commandes', 'CommandeAPIControleur@index');
+Routeur::publier('/api/commandes', 'CommandeAPIControleur@store');
+Routeur::obtenir('/api/commandes/{id}', 'CommandeAPIControleur@show')->ou('id', '[0-9]+');
+Routeur::mettre('/api/commandes/{id}', 'CommandeAPIControleur@update')->ou('id', '[0-9]+');
+Routeur::supprimer('/api/commandes/{id}', 'CommandeAPIControleur@destroy')->ou('id', '[0-9]+');

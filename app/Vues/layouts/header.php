@@ -36,7 +36,7 @@
         <!-- Panier Icon -->
         <a href="/paniers" class="relative flex items-center justify-center p-2 hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors animate__bounceIn hover:animate__heartBeat" aria-label="Voir le panier">
             <span class="material-symbols-outlined text-slate-900 dark:text-yellow-300 text-2xl">shopping_cart</span>
-            <span id="panier-count" class="absolute -top-1 -right-1 bg-gold text-white text-xs font-bold rounded-full px-2 py-0.5 shadow-lg">0</span>
+            <span id="panier-count" class="absolute -top-1 hidden -right-1 bg-gold text-white text-xs font-bold rounded-full px-2 py-0.5 shadow-lg"></span>
         </a>
 
         <!-- Desktop Button -->
@@ -578,8 +578,16 @@
         const panier = JSON.parse(localStorage.getItem('panier')) || [];
         const count = panier.reduce((acc, item) => acc + item.quantity, 0);
         const badge = document.getElementById('panier-count');
-        if (badge) badge.textContent = count > 0 ? count : '';
+        if (badge) {
+            badge.textContent = count > 0 ? count : '';
+            if (count > 0) {
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
     }
+    window.updatePanierCount = updatePanierCount;
     document.addEventListener('DOMContentLoaded', updatePanierCount);
     window.addEventListener('storage', updatePanierCount);
 </script>

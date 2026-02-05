@@ -78,7 +78,7 @@
     </div>
     <!-- 10-Column Responsive Grid -->
     <div class="px-2 md:px-10 lg:px-10 w-full overflow-x-hidden">
-        <div id="menu-contener" class="grid grid-cols-5 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-8 gap-1 sm:gap-3">
+        <div id="menu-contener" class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-8 gap-1 sm:gap-3">
             <!-- Menu items will be dynamically loaded here -->
         </div>
     </div>

@@ -10,6 +10,44 @@ use Core\BaseBD;
 class ReservationAPIControleur
 {
     /**
+     * PATCH /api/reservations/{id}/confirmer
+     * Confirme une réservation (statut = 'confirmé')
+     */
+    public function confirmer($id, Requete $request, Reponse $response)
+    {
+        try {
+            $bd = BaseBD::obtenir();
+            // Vérifier que la réservation existe
+            $checkQuery = "SELECT id FROM reservations WHERE id = ?";
+            $item = $bd->une($checkQuery, [$id]);
+            if (!$item) {
+                $response->json([
+                    'success' => false,
+                    'error' => 'Réservation non trouvée'
+                ], 404);
+                return;
+            }
+            $query = "UPDATE reservations SET status = 'confirmé' WHERE id = ?";
+            $result = $bd->executer($query, [$id]);
+            if (!$result) {
+                $response->json([
+                    'success' => false,
+                    'error' => "Erreur lors de la confirmation"
+                ], 500);
+                return;
+            }
+            $response->json([
+                'success' => true,
+                'message' => 'Réservation confirmée avec succès'
+            ]);
+        } catch (\Exception $e) {
+            $response->json([
+                'success' => false,
+                'error' => $e->getMessage()
+            ], 500);
+        }
+    }
+    /**
      * GET /api/reservations
      * Récupère toutes les réservations
      */
@@ -17,13 +55,21 @@ class ReservationAPIControleur
     {
         try {
             $bd = BaseBD::obtenir();
-            $query = "SELECT * FROM reservations ORDER BY reservation_date DESC, reservation_time DESC";
-            $items = $bd->tous($query);
-
+            // Pagination
+            $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
+            $perPage = isset($_GET['perPage']) ? max(1, intval($_GET['perPage'])) : 10;
+            $offset = ($page - 1) * $perPage;
+            // Compter le total
+            $countQuery = "SELECT COUNT(*) as total FROM reservations";
+            $countResult = $bd->une($countQuery);
+            $total = $countResult ? intval($countResult['total']) : 0;
+            // Récupérer la page
+            $query = "SELECT * FROM reservations ORDER BY reservation_date DESC, reservation_time DESC LIMIT ? OFFSET ?";
+            $items = $bd->tous($query, [$perPage, $offset]);
             $response->json([
                 'success' => true,
                 'data' => $items,
-                'count' => count($items)
+                'count' => $total
             ]);
         } catch (\Exception $e) {
             $response->json([

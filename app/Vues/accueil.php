@@ -133,49 +133,49 @@
             <span class="text-primary font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Sélection de Saison</span>
             <h2 class="text-4xl md:text-5xl font-black dark:text-white text-slate-900 tracking-tighter">Nos Créations Signature</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="floating-card group bg-charcoal rounded-xl overflow-hidden border border-white/5 shadow-2xl">
                 <div class="aspect-[4/5] overflow-hidden">
-                    <div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBViL4ZW_Qn04Mg1rNcqVkwfP-x7hxNl_QA7QvQkgRGOyDMpl2VlE6tLCT9Bk0QXW53mbC12DZ9so-fxAm9W05SbT2tVcqc3jdYv4kraUFWXavKoXovyM350uwgq-UHS0wATebL6XYUSY186cCEn4840CH2zzni6f9aA7maYnYgvJEHBTYq0LbI0EqebYphVZpVpsR9OqtAyxEyOx0dOfG6Dv0epHpcGo6AMHeMi0U2ZUaeYB90qybM5p4nOA4TuIUkqQUN9vgGJO0");'></div>
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBViL4ZW_Qn04Mg1rNcqVkwfP-x7hxNl_QA7QvQkgRGOyDMpl2VlE6tLCT9Bk0QXW53mbC12DZ9so-fxAm9W05SbT2tVcqc3jdYv4kraUFWXavKoXovyM350uwgq-UHS0wATebL6XYUSY186cCEn4840CH2zzni6f9aA7maYnYgvJEHBTYq0LbI0EqebYphVZpVpsR9OqtAyxEyOx0dOfG6Dv0epHpcGo6AMHeMi0U2ZUaeYB90qybM5p4nOA4TuIUkqQUN9vgGJO0");'></div>
                 </div>
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-white text-2xl font-bold tracking-tight">Noix de Saint-Jacques</h3>
-                        <span class="text-primary font-bold">32€</span>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-white text-lg font-bold tracking-tight">Noix de Saint-Jacques</h3>
+                        <span class="text-primary font-bold text-sm">32€</span>
                     </div>
-                    <p class="dark:text-white/60 text-sm leading-relaxed mb-6">Beurre herbes-citron, velouté de chou-fleur, huile de chorizo, jeunes pousses.</p>
-                    <button class="flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-4 transition-all">
-                        Détails <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    <p class="dark:text-white/60 text-xs leading-relaxed mb-3">Beurre herbes-citron, velouté de chou-fleur, huile de chorizo, jeunes pousses.</p>
+                    <button class="flex items-center gap-1 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-2 transition-all">
+                        Détails <span class="material-symbols-outlined text-xs">arrow_forward</span>
                     </button>
                 </div>
             </div>
             <div class="floating-card group bg-charcoal rounded-xl overflow-hidden border border-white/5 shadow-2xl">
                 <div class="aspect-[4/5] overflow-hidden">
-                    <div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCeNoz3MbbnIksyX3hhnaG56YIjd8Ls5uGm0JmGwPRX3TqbOUGy2pWJMwIDqmstycMD7ikMaBpZ7oVLIjOoian2YykKnQs2e6mlGYKWXjbnjiHh-a29EhI1wHdmytIUudVsPbbHCyfoi9n2wtfp6ufJdJRDjvUD3UB65JhEfZWq6MB0-8NrhB9BN_HyNij16yuSfTsljPl6DATFiVC9cs2BA1hdT7BKRDRR2NrMouRdJL-AFjfy0qpy7SJzFjdpRoYpT6vc6fDacpk");'></div>
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCeNoz3MbbnIksyX3hhnaG56YIjd8Ls5uGm0JmGwPRX3TqbOUGy2pWJMwIDqmstycMD7ikMaBpZ7oVLIjOoian2YykKnQs2e6mlGYKWXjbnjiHh-a29EhI1wHdmytIUudVsPbbHCyfoi9n2wtfp6ufJdJRDjvUD3UB65JhEfZWq6MB0-8NrhB9BN_HyNij16yuSfTsljPl6DATFiVC9cs2BA1hdT7BKRDRR2NrMouRdJL-AFjfy0qpy7SJzFjdpRoYpT6vc6fDacpk");'></div>
                 </div>
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-white text-2xl font-bold tracking-tight">Entrecôte Wagyu</h3>
-                        <span class="text-primary font-bold">85€</span>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-white text-lg font-bold tracking-tight">Entrecôte Wagyu</h3>
+                        <span class="text-primary font-bold text-sm">85€</span>
                     </div>
-                    <p class="dark:text-white/60 text-sm leading-relaxed mb-6">Grade A5, sel marin fumé, jus à la truffe, poireaux brûlés.</p>
-                    <button class="flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-4 transition-all">
-                        Détails <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    <p class="dark:text-white/60 text-xs leading-relaxed mb-3">Grade A5, sel marin fumé, jus à la truffe, poireaux brûlés.</p>
+                    <button class="flex items-center gap-1 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-2 transition-all">
+                        Détails <span class="material-symbols-outlined text-xs">arrow_forward</span>
                     </button>
                 </div>
             </div>
             <div class="floating-card group bg-charcoal rounded-xl overflow-hidden border border-white/5 shadow-2xl">
                 <div class="aspect-[4/5] overflow-hidden">
-                    <div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvVpDu63fXgVnX-vadbFs-tX4uN5bckg_FwrKKH2THxFCLrjDaxG3WVn0JNoAoPSGT4TS7tv4hdPV3Zq8yITykkAd1O4Ut0_mrYETnSbrD-yU4zaUve-Kki_HGUYUwJA-jo1FVhrSTWiu9IjHomXSgJobmLiXxH3Bpyy-8ULP_F4S_nr5TVfRZodgs8WEJZaKRV21fusWJnANlGHuy388E-c5Rv3dtrBiYdZsgllUJ47GkZuof8g3mMXtpLX_vTdg3PQi6p3j2UMU");'></div>
+                    <div class="w-full h-full bg-center bg-cover transition-transform duration-700 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvVpDu63fXgVnX-vadbFs-tX4uN5bckg_FwrKKH2THxFCLrjDaxG3WVn0JNoAoPSGT4TS7tv4hdPV3Zq8yITykkAd1O4Ut0_mrYETnSbrD-yU4zaUve-Kki_HGUYUwJA-jo1FVhrSTWiu9IjHomXSgJobmLiXxH3Bpyy-8ULP_F4S_nr5TVfRZodgs8WEJZaKRV21fusWJnANlGHuy388E-c5Rv3dtrBiYdZsgllUJ47GkZuof8g3mMXtpLX_vTdg3PQi6p3j2UMU");'></div>
                 </div>
-                <div class="p-8">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="text-white text-2xl font-bold tracking-tight">Risotto du Jardin</h3>
-                        <span class="text-primary font-bold">28€</span>
+                <div class="p-4">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-white text-lg font-bold tracking-tight">Risotto du Jardin</h3>
+                        <span class="text-primary font-bold text-sm">28€</span>
                     </div>
-                    <p class="dark:text-white/60 text-sm leading-relaxed mb-6">Légumes anciens, parmesan affiné, essence de basilic, or comestible.</p>
-                    <button class="flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-4 transition-all">
-                        Détails <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    <p class="dark:text-white/60 text-xs leading-relaxed mb-3">Légumes anciens, parmesan affiné, essence de basilic, or comestible.</p>
+                    <button class="flex items-center gap-1 text-primary text-xs font-black uppercase tracking-widest group-hover:gap-2 transition-all">
+                        Détails <span class="material-symbols-outlined text-xs">arrow_forward</span>
                     </button>
                 </div>
             </div>

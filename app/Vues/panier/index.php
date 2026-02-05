@@ -40,10 +40,10 @@
                     </div>
                 </div>
                 <hr class="border-gold/30 my-2">
-                <button class="mt-2 w-full py-4 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 text-white font-extrabold text-lg shadow hover:from-amber-500 hover:to-yellow-600 transition-all flex items-center justify-center gap-2">
+                <a href="/paniers/finaliser" class="mt-2 w-full py-4 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 text-white font-extrabold text-lg shadow hover:from-amber-500 hover:to-yellow-600 transition-all flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined">shopping_bag</span>
                     Valider la commande
-                </button>
+                </a>
             </div>
         </aside>
     </div>

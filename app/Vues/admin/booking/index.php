@@ -75,7 +75,15 @@
             </div>
         </div>
     </header>
-    <div class="flex-1 overflow-y-auto p-6">
+    <div class="flex-1 overflow-y-auto p-6 relative">
+        <!-- Aside détails -->
+        <aside id="admin-details-aside" class="fixed hidden top-0 right-0 h-full w-96 max-w-full bg-white dark:bg-[#181711] shadow-xl border-l border-[#e6e4db] dark:border-gray-800 z-50  flex-col p-6 overflow-y-auto transition-all">
+            <button id="close-details-aside" class="absolute top-4 right-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 hover:text-primary hover:bg-gray-200 dark:hover:bg-gray-700">
+                <span class="material-symbols-outlined text-[24px]">close</span>
+            </button>
+            <div id="details-content" class="mt-8"></div>
+        </aside>
+        <!-- Fin Aside détails -->
 
         <div id="admin-booking-tab-content" class="w-full">
             <!-- Le contenu dynamique des onglets sera injecté ici -->
@@ -115,7 +123,7 @@
                     <button class="pb-3 text-sm font-medium text-[#8a8460] dark:text-gray-400 hover:text-[#181711] dark:hover:text-white transition-colors border-b-2 border-transparent">
                         Commandes
                     </button>
-                    <button class="pb-3 text-sm font-bold text-primary border-b-2 border-primary">
+                    <button class="pb-3 text-sm font-bold text-primary border-b-2 border-primary hidden">
                         Historique
                     </button>
                 </div>
@@ -154,8 +162,8 @@
                             <tr class="bg-[#fcfbf8] dark:bg-gray-900 border-b border-[#e6e4db] dark:border-gray-700">
                                 <th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#8a8460] dark:text-gray-400">Date &amp; Heure</th>
                                 <th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#8a8460] dark:text-gray-400 w-24">ID</th>
-                                <th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#8a8460] dark:text-gray-400">Client &amp; Type</th>
-                                <th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#8a8460] dark:text-gray-400 w-1/3">Détails</th>
+                                <th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#8a8460] dark:text-gray-400">Client </th>
+                                <th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#8a8460] dark:text-gray-400 w-1/3">type</th>
                                 <th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#8a8460] dark:text-gray-400">Montant</th>
                                 <th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#8a8460] dark:text-gray-400">Statut</th>
                                 <th class="py-4 px-6 text-xs font-bold uppercase tracking-wider text-[#8a8460] dark:text-gray-400 text-right">Actions</th>
@@ -360,211 +368,12 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody
-                            class="divide-y divide-[#f0efeb] dark:divide-gray-800 text-sm">
-                            <tr
-                                class="group hover:bg-[#faf9f6] dark:hover:bg-gray-800/50 transition-colors">
-                                <td class="py-4 px-6 font-medium text-gray-400">#2491</td>
-                                <td class="py-4 px-6">
-                                    <div class="flex flex-col">
-                                        <span class="font-bold text-[#181711] dark:text-white">Jean Kabeya</span>
-                                        <span
-                                            class="text-xs text-[#8a8460] dark:text-gray-500">+243 81 234 5678</span>
-                                    </div>
-                                </td>
-                                <td class="py-4 px-6 text-[#181711] dark:text-gray-300">
-                                    24 Oct, <span class="font-semibold">19:30</span>
-                                </td>
-                                <td class="py-4 px-6">
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="material-symbols-outlined text-gray-400 text-sm">person</span>
-                                        <span
-                                            class="font-medium text-[#181711] dark:text-white">4</span>
-                                    </div>
-                                </td>
-                                <td class="py-4 px-6 text-[#5e5a45] dark:text-gray-400">
-                                    T-12
-                                </td>
-                                <td class="py-4 px-6">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-[#eefae6] dark:bg-green-900/20 text-[#1a7f37] dark:text-green-400 border border-[#ccebc4] dark:border-green-800/50">
-                                        <span class="size-1.5 rounded-full bg-current"></span>
-                                        Confirmé
-                                    </span>
-                                </td>
-                                <td class="py-4 px-6 text-right">
-                                    <button
-                                        class="p-2 text-gray-400 hover:text-[#181711] dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                                        <span class="material-symbols-outlined text-[20px]">more_vert</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr
-                                class="group hover:bg-[#faf9f6] dark:hover:bg-gray-800/50 transition-colors">
-                                <td class="py-4 px-6 font-medium text-gray-400">#2490</td>
-                                <td class="py-4 px-6">
-                                    <div class="flex flex-col">
-                                        <span class="font-bold text-[#181711] dark:text-white">Marie Lusamba</span>
-                                        <span
-                                            class="text-xs text-[#8a8460] dark:text-gray-500">+243 99 876 5432</span>
-                                    </div>
-                                </td>
-                                <td class="py-4 px-6 text-[#181711] dark:text-gray-300">
-                                    24 Oct, <span class="font-semibold">20:00</span>
-                                </td>
-                                <td class="py-4 px-6">
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="material-symbols-outlined text-gray-400 text-sm">person</span>
-                                        <span
-                                            class="font-medium text-[#181711] dark:text-white">2</span>
-                                    </div>
-                                </td>
-                                <td class="py-4 px-6 text-[#5e5a45] dark:text-gray-400">
-                                    —
-                                </td>
-                                <td class="py-4 px-6">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-[#fff8e1] dark:bg-yellow-900/20 text-[#b26b00] dark:text-yellow-500 border border-[#ffe082] dark:border-yellow-800/50">
-                                        <span
-                                            class="size-1.5 rounded-full bg-current animate-pulse"></span>
-                                        En attente
-                                    </span>
-                                </td>
-                                <td class="py-4 px-6 text-right">
-                                    <div class="flex justify-end gap-1">
-                                        <button
-                                            class="p-1.5 text-green-600 hover:bg-green-50 dark:hover:bg-green-900/30 rounded-md transition-colors"
-                                            title="Confirmer">
-                                            <span class="material-symbols-outlined text-[20px]">check</span>
-                                        </button>
-                                        <button
-                                            class="p-1.5 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-md transition-colors"
-                                            title="Annuler">
-                                            <span class="material-symbols-outlined text-[20px]">close</span>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr
-                                class="group hover:bg-[#faf9f6] dark:hover:bg-gray-800/50 transition-colors">
-                                <td class="py-4 px-6 font-medium text-gray-400">#2488</td>
-                                <td class="py-4 px-6">
-                                    <div class="flex flex-col">
-                                        <span class="font-bold text-[#181711] dark:text-white">Entreprise Vodacom</span>
-                                        <span
-                                            class="text-xs text-[#8a8460] dark:text-gray-500">Corporate Lunch</span>
-                                    </div>
-                                </td>
-                                <td class="py-4 px-6 text-[#181711] dark:text-gray-300">
-                                    25 Oct, <span class="font-semibold">12:30</span>
-                                </td>
-                                <td class="py-4 px-6">
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="material-symbols-outlined text-gray-400 text-sm">person</span>
-                                        <span
-                                            class="font-medium text-[#181711] dark:text-white">12</span>
-                                    </div>
-                                </td>
-                                <td class="py-4 px-6 text-[#5e5a45] dark:text-gray-400">
-                                    T-01, T-02
-                                </td>
-                                <td class="py-4 px-6">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-[#eefae6] dark:bg-green-900/20 text-[#1a7f37] dark:text-green-400 border border-[#ccebc4] dark:border-green-800/50">
-                                        <span class="size-1.5 rounded-full bg-current"></span>
-                                        Confirmé
-                                    </span>
-                                </td>
-                                <td class="py-4 px-6 text-right">
-                                    <button
-                                        class="p-2 text-gray-400 hover:text-[#181711] dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                                        <span class="material-symbols-outlined text-[20px]">more_vert</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr
-                                class="group hover:bg-[#faf9f6] dark:hover:bg-gray-800/50 transition-colors">
-                                <td class="py-4 px-6 font-medium text-gray-400">#2485</td>
-                                <td class="py-4 px-6">
-                                    <div class="flex flex-col">
-                                        <span class="font-bold text-[#181711] dark:text-white">Sarah Mbemba</span>
-                                        <span
-                                            class="text-xs text-[#8a8460] dark:text-gray-500">Anniversaire</span>
-                                    </div>
-                                </td>
-                                <td class="py-4 px-6 text-[#181711] dark:text-gray-300">
-                                    25 Oct, <span class="font-semibold">20:30</span>
-                                </td>
-                                <td class="py-4 px-6">
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="material-symbols-outlined text-gray-400 text-sm">person</span>
-                                        <span
-                                            class="font-medium text-[#181711] dark:text-white">6</span>
-                                    </div>
-                                </td>
-                                <td class="py-4 px-6 text-[#5e5a45] dark:text-gray-400">
-                                    —
-                                </td>
-                                <td class="py-4 px-6">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-gray-700">
-                                        <span class="size-1.5 rounded-full bg-current"></span>
-                                        Annulé
-                                    </span>
-                                </td>
-                                <td class="py-4 px-6 text-right">
-                                    <button
-                                        class="p-2 text-gray-400 hover:text-[#181711] dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                                        <span class="material-symbols-outlined text-[20px]">more_vert</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr
-                                class="group hover:bg-[#faf9f6] dark:hover:bg-gray-800/50 transition-colors">
-                                <td class="py-4 px-6 font-medium text-gray-400">#2484</td>
-                                <td class="py-4 px-6">
-                                    <div class="flex flex-col">
-                                        <span class="font-bold text-[#181711] dark:text-white">Patrick M.</span>
-                                        <span
-                                            class="text-xs text-[#8a8460] dark:text-gray-500">+243 82 000 1111</span>
-                                    </div>
-                                </td>
-                                <td class="py-4 px-6 text-[#181711] dark:text-gray-300">
-                                    25 Oct, <span class="font-semibold">21:00</span>
-                                </td>
-                                <td class="py-4 px-6">
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="material-symbols-outlined text-gray-400 text-sm">person</span>
-                                        <span
-                                            class="font-medium text-[#181711] dark:text-white">2</span>
-                                    </div>
-                                </td>
-                                <td class="py-4 px-6 text-[#5e5a45] dark:text-gray-400">
-                                    T-08
-                                </td>
-                                <td class="py-4 px-6">
-                                    <span
-                                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-[#eefae6] dark:bg-green-900/20 text-[#1a7f37] dark:text-green-400 border border-[#ccebc4] dark:border-green-800/50">
-                                        <span class="size-1.5 rounded-full bg-current"></span>
-                                        Confirmé
-                                    </span>
-                                </td>
-                                <td class="py-4 px-6 text-right">
-                                    <button
-                                        class="p-2 text-gray-400 hover:text-[#181711] dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
-                                        <span class="material-symbols-outlined text-[20px]">more_vert</span>
-                                    </button>
-                                </td>
-                            </tr>
+                        <tbody class="divide-y divide-[#f0efeb] dark:divide-gray-800 text-sm">
+                            <!-- les données sont chargés avec js -->
                         </tbody>
                     </table>
                 </div>
-                <div class="flex items-center justify-between px-6 py-4 bg-[#fcfbf8] dark:bg-gray-900 border-t border-[#e6e4db] dark:border-gray-700">
+                <div id="reservation-pagination" class="flex items-center justify-between px-6 py-4 bg-[#fcfbf8] dark:bg-gray-900 border-t border-[#e6e4db] dark:border-gray-700">
                     <span class="text-sm text-[#8a8460] dark:text-gray-400">
                         Affichage de <span class="font-medium text-[#181711] dark:text-white">1</span> à <span class="font-medium text-[#181711] dark:text-white">5</span> sur <span class="font-medium text-[#181711] dark:text-white">482</span> entrées
                     </span>
@@ -580,7 +389,7 @@
 <!-- Réservations admin -->
 
 <script src="/js/admin/reservation.js"></script>
-<script src="/js/admin/booking-tab.js"></script>
+<script src="/js/admin/booking-tabs.js"></script>
 <?php
 \core\Vue::fin_section('contenu');
 ?>
